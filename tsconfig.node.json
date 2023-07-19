@@ -10,7 +10,6 @@
   "compilerOptions": {
     "composite": true,
     "module": "ESNext",
-    "types": ["node"],
-    "allowJs": true
+    "types": ["node"]
   }
 }

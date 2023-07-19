@@ -39,6 +39,7 @@ export default defineComponent({
         preventCollision={preventCollision.value}
       >
         {layout.map((item) => [
+          // @ts-ignore
           <GridItem static={!isEdit.value} {...item}>
             {item.i}
           </GridItem>

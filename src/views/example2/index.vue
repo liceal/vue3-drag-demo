@@ -4,22 +4,6 @@ import Sortable from 'sortablejs'
 
 export default defineComponent({
   setup() {
-    // 数据格式
-    let gridData = ref([
-      ['a', 'a', 'b'],
-      ['c', 'c', 'b'],
-      ['d', 'e', 'f']
-    ])
-
-    function dragStartFn(e: DragEvent) {
-      console.log(e)
-      e.dataTransfer.effectAllowed = 'move'
-    }
-
-    function dragFn(e) {
-      console.log(e)
-    }
-
     const containerRef = ref()
     onMounted(() => {
       new Sortable(containerRef.value, {
@@ -64,19 +48,6 @@ export default defineComponent({
           6
         </div>
       </div>
-      // <hr />,
-      // <div id="example2" class="container">
-      //   <div class="item item1" draggable={true}>
-      //     1
-      //   </div>
-      //   <div class="item item2" draggable={true}>
-      //     2
-      //   </div>
-      //   <div class="item item3">3</div>
-      //   <div class="item item4">4</div>
-      //   <div class="item item5">5</div>
-      //   <div class="item item6">6</div>
-      // </div>
     ]
   }
 })

@@ -8,7 +8,7 @@ export default defineComponent({
     let VLine = ref()
     let HLine = ref()
 
-    function getRefLineParams(params) {
+    function getRefLineParams(params: any) {
       const { vLine, hLine } = params
       VLine.value = vLine
       HLine.value = hLine
@@ -44,14 +44,14 @@ export default defineComponent({
           3
         </Resizeable>
 
-        {VLine.value?.map((v) => [
+        {VLine.value?.map((v: any) => [
           <span
             class="ref-line v-line"
             v-show={v.display}
             style={{ left: v.position, top: v.origin, height: v.lineLength }}
           ></span>
         ])}
-        {HLine.value?.map((v) => [
+        {HLine.value?.map((v: any) => [
           <span
             class="ref-line h-line"
             v-show={v.display}

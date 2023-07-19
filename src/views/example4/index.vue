@@ -1,6 +1,7 @@
 <script lang="tsx">
 import { defineComponent, ref } from 'vue'
 import { GridLayout, GridItem } from 'vue3-grid-layout-next'
+
 export default defineComponent({
   setup() {
     let layout = ref([
@@ -27,9 +28,8 @@ export default defineComponent({
     ])
     let draggable = ref(true)
     let resizable = ref(true)
-    let index = ref(0)
 
-    function itemTitle(item) {
+    function itemTitle(item: any) {
       let result = item.i
       if (item.static) {
         result += ' - Static'
@@ -47,6 +47,7 @@ export default defineComponent({
         use-css-transforms={true}
       >
         {layout.value.map((item) => [
+          // @ts-ignore
           <GridItem static={item.static} x={item.x} y={item.y} w={item.w} h={item.h} i={item.i}>
             <span class="text">{itemTitle(item)}</span>
           </GridItem>
